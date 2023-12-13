@@ -1,0 +1,30 @@
+{
+  "name": "learning-backend",
+  "version": "1.0.0",
+  "description": "learning backend with node and express",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "start": " npx nodemon src/index.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "react",
+    "mongodb"
+  ],
+  "author": "Arun Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "nodemon": "^3.0.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1"
+  }
+}

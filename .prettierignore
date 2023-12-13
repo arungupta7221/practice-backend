@@ -1,0 +1,16 @@
+# Ignore all files in the "node_modules" directory
+node_modules/
+
+# Ignore all files with a ".json" extension
+*.json
+
+# Ignore specific files or directories
+dist/
+build/
+coverage/
+
+# Ignore env files
+
+*.env
+.env
+.env.*
