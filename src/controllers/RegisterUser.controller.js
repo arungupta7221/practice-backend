@@ -23,12 +23,14 @@ const RegisterUser = async (req, res) => {
 
   const avatarLocalPath = req.files?.avatar[0]?.path;
   const coverImagePath = req.files?.coverImage[0]?.path;
+  console.log("path", avatarLocalPath, coverImagePath);
 
   if (!avatarLocalPath) {
     throw new ApiError(400, "Avatar File is required !!!");
   }
-  throw new ApiError(400, "Avatar File is required !!!");
+
   const avatar = await uploadOnCloudinary(avatarLocalPath);
+  console.log("avatar", avatar);
   const coverImage = await uploadOnCloudinary(coverImagePath);
 
   if (!avatar) {
@@ -43,12 +45,11 @@ const RegisterUser = async (req, res) => {
     password,
     username: username.toLowerCase(),
   });
-  console.log("created user", user);
 
   const createdUser = await User.findById(user._id).select(
     "-password -refreshToken"
   );
-
+  console.log("created user", createdUser);
   if (!createdUser) {
     throw new ApiError(500, "Something went wrong while registering the user");
   }
